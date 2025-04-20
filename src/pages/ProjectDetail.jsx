@@ -1,20 +1,22 @@
-import { useParams, Link } from 'react-router-dom';
+import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { projects } from '../assets/project-data';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 const ProjectDetail = () => {
     const { id } = useParams();
+    const navigate = useNavigate();
     const project = projects.find(p => p.id === parseInt(id));
     const [selectedImage, setSelectedImage] = useState(0);
 
+    useEffect(() => {
+        if (!project) {
+            navigate('/');
+        }
+    }, [project, navigate]);
+
     if (!project) {
-        return (
-            <div className="container mx-auto px-4 py-8">
-                <h1 className="text-2xl font-bold mb-4">Project not found</h1>
-                <Link to="/" className="text-blue-500 hover:underline">← Back to Home</Link>
-            </div>
-        );
+        return null;
     }
 
     return (
@@ -50,7 +52,6 @@ const ProjectDetail = () => {
                     transition={{ duration: 0.5 }}
                     className="bg-white rounded-lg shadow-lg p-8"
                 >
-
                     <div className="mb-8">
                         <h2 className="text-2xl font-bold mb-4">Overview</h2>
                         <p className="text-gray-700 whitespace-pre-line">{project.overview}</p>
