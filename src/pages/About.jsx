@@ -5,9 +5,9 @@ import Banner from '../components/Banner';
 const About = () => {
     return (
         <div className="min-h-screen">
-            <Banner>
-                <h1 className="text-3xl font-bold mb-12">About Me</h1>
-                <img src={profile} alt="Profile" className="rounded-md min-w-60" />
+            <Banner className="pt-20">
+                <h1 className="text-6xl mb-8 font-bold">About Me</h1>
+                <img src={profile} alt="Profile" className="rounded-md min-w-60 max-w-60 shadow-lg" />
             </Banner>
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
@@ -15,29 +15,35 @@ const About = () => {
                 transition={{ duration: 0.8 }}
                 className="flex items-center gap-10 text-left"
             >
-
-                <div className="prose prose-lg max-w-none">
-                    <p>
-                        I’m a user researcher from the United States with an MSc in Human-Computer Interaction Design. During my MSc in Human-Computer Interaction Design, I've worked on a variety of projects that pushed my skills, including user research, UX design, participatory design, accessibility, information architecture, virtual reality design and development, as well as web design and development.
-                    </p>
-                    <p>
-                        My journey in UX began with my innate fascination for people's perspectives and behaviors, combined with a strong desire to help others. This curiosity, paired with an interest in the tech world, inspired me to focus on crafting intuitive and innovative user experiences.
-                    </p>
-                    <p>
-                        With a background in psychology, I’ve always been fascinated by people’s thoughts, motivations, and behaviors. My research focuses on designing user experiences that seamlessly align with and support users’ needs and goals in the most efficient way possible.
-                    </p>
-                    <p>
-                        When I’m not working, I enjoy practicing Russian, discovering new music, or staying active through pilates.
-                    </p>
-                    <h2 className="text-2xl mt-12 mb-6">Skills & Expertise</h2>
-                    <ul className="list-none space-y-1 text-lg text-gray-600">
-                        <li>User Research & Testing</li>
-                        <li>UX/UI Design</li>
-                        <li>Information Architecture</li>
-                        <li>Prototyping</li>
-                        <li>Data Analysis</li>
-                        <li>User Journey Mapping</li>
-                    </ul>
+                <div className="container grid grid-cols-2 gap-20 my-16">
+                    <div>
+                        <h3 className='text-3xl font-bold mb-4'>Background</h3>
+                        <p className='text-xl'>
+                            My journey in UX began with a fascination for people’s perspectives and behaviors, paired with a desire to create meaningful solutions.
+                        </p>
+                        <br />
+                        <p className='text-xl'>
+                            With a background in psychology, I focus on designing experiences that align with users’ needs and goals, making interactions efficient, and engaging.
+                        </p>
+                    </div>
+                    <div>
+                        <h3 className='text-3xl font-bold mb-4'>Outside of Work</h3>
+                        <p className='text-xl'>
+                            When I’m not designing, I enjoy learning languages, discovering new music, and staying active.
+                        </p>
+                        <br />
+                        <p className='text-xl'>
+                            I love exploring activities that challenge my mind and keep me curious about the world.
+                        </p>
+                    </div>
+                    <div className='col-span-2'>
+                        <h3 className='text-3xl font-bold mb-4'>Testimonials</h3>
+                        <p className='text-xl'>
+                            "Nicole is a talented UX designer with a deep understanding of user needs and a creative approach to problem-solving. She consistently delivers high-quality work that meets and exceeds expectations."
+                        </p>
+                        <br />
+                        <p>- John Doe, CEO of Company X</p>
+                    </div>
                 </div>
             </motion.div>
         </div >

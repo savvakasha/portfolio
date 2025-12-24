@@ -62,7 +62,7 @@ const Home = () => {
                     <img src="avatar.png" alt="Profile" className="rounded-md shadow-lg w-3/4" />
                 </div>
             </Banner>
-            <section id="projects" className=" container  my-16">
+            <section id="projects" className="container  my-16">
                 <div className="flex flex-col py-16 gap-12">
                     <IntroProjectItem
                         title="Designing OutSmart: A Competitive Skill-Based Gaming App"
