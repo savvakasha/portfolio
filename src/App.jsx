@@ -13,17 +13,15 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <div className="min-h-screen flex flex-col w-full max-w-6xl mx-auto px-4 sm:px-6">
-        <main className="flex-grow w-full">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/work" element={<Work />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/project/:id" element={<ProjectDetail />} />
-          </Routes>
-        </main>
-      </div>
+      <main className="flex-grow w-full justify-self-end" style={{ width: 'calc(100% - 176px)' }}>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/work" element={<Work />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/project/:id" element={<ProjectDetail />} />
+        </Routes>
+      </main>
       <Footer />
     </Router>
   );

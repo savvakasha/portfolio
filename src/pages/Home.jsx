@@ -1,8 +1,9 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import profile from '../assets/avatar1.jpg';
 import { useState, useEffect } from 'react';
 import { projects } from '../assets/project-data';
+import Banner from '../components/Banner';
+import outsmart from '../assets/images/intro-outsmart.png';
 
 const Home = () => {
     const [filter, setFilter] = useState('all');
@@ -29,33 +30,24 @@ const Home = () => {
     }, []);
 
     return (
-        <div className="min-h-screen">
+        <div>
             {/* Hero Section */}
-            <section className="container flex my-16 bg-gray-100 py-10">
+            <Banner>
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="text-left"
                 >
-                    <h1 className="text-4xl mb-8 font-bold">
-                        Hi, I'm Nicole
+                    <h1 className="text-6xl mb-8 font-bold">
+                        Nicole Condon is a UX designer creating intuitive, inclusive, and interactive digital experiences
                     </h1>
-                    <p className="text-xl text-gray-600 mb-8">
-                        I am a user researcher and UX designer.
-                    </p>
-                    <p className="text-lg text-gray-600 mb-8 max-w-2xl">
-                        As a user researcher and UX designer, I draw on my background in psychology
-                        and customer service to deeply understand people, ensuring systems are
-                        designed to be intuitive, helpful, and efficient.
-                    </p>
+                    <h2 className="text-3xl text-gray-600 mb-8">
+                        As a UX Designer and user researcher, I leverage my background in psychology and customer service to understand people, creating systems that are intuitive, helpful, and efficient.
+                    </h2>
+
                     <div className="flex space-x-6 mb-8">
-                        <a
-                            href="mailto:nicolec0225a@gmail.com"
-                            className="text-sm text-gray-600 hover:text-black transition-colors"
-                        >
-                            nicolec0225a@gmail.com
-                        </a>
+                        <p><b>My toolbox:</b> Figma, Qualtrics, Unity, Optimal Workshop, MAXQDA</p>
                         <a
                             href="https://linkedin.com"
                             target="_blank"
@@ -65,98 +57,68 @@ const Home = () => {
                             LinkedIn
                         </a>
                     </div>
-                    <a
-                        href="/#projects"
-                        className="btn mb-8"
-                    >
-                        View My Work
-                    </a>
-                    <p><b>My toolbox:</b> Figma, Qualtrics, Unity, Optimal Workshop, MAXQDA</p>
                 </motion.div>
-                <div className="flex justify-center items-center ">
-                    <img src={profile} alt="Profile" className="rounded-md shadow-lg w-3/4" />
+                <div className="flex justify-center items-center max-w-80 min-w-80 ">
+                    <img src="avatar.png" alt="Profile" className="rounded-md shadow-lg w-3/4" />
                 </div>
-            </section>
-            <section id="projects" className="container bg-gray-100 my-16">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="py-16"
-                >
-                    <h2 className="text-2xl font-bold mb-8">Featured Projects</h2>
+            </Banner>
+            <section id="projects" className=" container  my-16">
+                <div className="flex flex-col py-16 gap-12">
+                    <IntroProjectItem
+                        title="Designing OutSmart: A Competitive Skill-Based Gaming App"
+                        tags="UX Design, UI Design, UX Research"
+                        description="Designing a real-money gaming app and its design system, improving trust and engagement across gameplay, navigation, and payments."
+                        image={outsmart}
+                        altText="OutSmart Logo"
 
-                    <div className="mb-8">
-                        <div className="flex justify-center space-x-4">
-                            <button
-                                className={`px-4 py-2 rounded transition-colors ${filter === 'all'
-                                    ? 'bg-blue-500 text-white'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                                    }`}
-                                onClick={() => setFilter('all')}
-                            >
-                                All Projects
-                            </button>
-                            <button
-                                className={`px-4 py-2 rounded transition-colors ${filter === 'research'
-                                    ? 'bg-blue-500 text-white'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                                    }`}
-                                onClick={() => setFilter('research')}
-                            >
-                                Research
-                            </button>
-                            <button
-                                className={`px-4 py-2 rounded transition-colors ${filter === 'design'
-                                    ? 'bg-blue-500 text-white'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                                    }`}
-                                onClick={() => setFilter('design')}
-                            >
-                                Design
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {projects.filter(project => {
-                            if (filter === 'all') return true;
-                            return project.categories?.includes(filter.charAt(0).toUpperCase() + filter.slice(1));
-                        }).map((project, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="border bg-cover border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-transform hover:scale-105  transition-shadow"
-                                style={{
-                                    backgroundImage: `url(${project.bgImage})`,
-                                    backgroundBlendMode: 'overlay',
-                                    background: `url(${project.bgImage}) , linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6))`,
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center'
-                                }}
-                            >
-                                <div className="p-6 h-full bg-cover bg-center" style={{ backdropFilter: 'blur(4px)' }} >
-                                    <span className="text-sm text-gray-500 mb-2 block">
-                                        {project.category}
-                                    </span>
-                                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                                    <p className="text-gray-600 font-bold mb-4">{project.shortDescription}</p>
-                                    <Link
-                                        to={`/project/${project.id}`}
-                                        className="text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline"
-                                    >
-                                        View Project →
-                                    </Link>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
+                    />
+                    <IntroProjectItem
+                        title="Designing OutSmart: A Competitive Skill-Based Gaming App"
+                        tags="UX Design, UI Design, UX Research"
+                        description="Designing a real-money gaming app and its design system, improving trust and engagement across gameplay, navigation, and payments."
+                        image={outsmart}
+                        altText="OutSmart Logo"
+                        isReversed={true}
+                    />
+                    <IntroProjectItem
+                        title="Designing OutSmart: A Competitive Skill-Based Gaming App"
+                        tags="UX Design, UI Design, UX Research"
+                        description="Designing a real-money gaming app and its design system, improving trust and engagement across gameplay, navigation, and payments."
+                        image={outsmart}
+                        altText="OutSmart Logo"
+                    />
+                    <IntroProjectItem
+                        title="Designing OutSmart: A Competitive Skill-Based Gaming App"
+                        tags="UX Design, UI Design, UX Research"
+                        description="Designing a real-money gaming app and its design system, improving trust and engagement across gameplay, navigation, and payments."
+                        image={outsmart}
+                        altText="OutSmart Logo"
+                        isReversed={true}
+                    />
+                </div>
             </section>
         </div>
     );
 };
 
-export default Home; 
+export default Home;
+
+const IntroProjectItem = ({ title, tags, description, image, altText, isReversed }) => {
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className={`flex gap-12 ${isReversed ? 'flex-row-reverse' : 'flex-row'}`}
+        >
+            <div>
+                <img src={image} alt={altText} />
+            </div>
+            <div>
+                <h3>{title}</h3>
+                <p>{tags}</p>
+                <p>{description}</p>
+            </div>
+        </motion.div>
+    );
+};
