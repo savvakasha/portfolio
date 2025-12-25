@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import { projects } from '../assets/project-data';
 import Banner from '../components/Banner';
@@ -48,14 +47,7 @@ const Home = () => {
 
                     <div className="flex space-x-6 mb-8">
                         <p><b>My toolbox:</b> Figma, Qualtrics, Unity, Optimal Workshop, MAXQDA</p>
-                        <a
-                            href="https://linkedin.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm text-gray-600 hover:text-black transition-colors"
-                        >
-                            LinkedIn
-                        </a>
+
                     </div>
                 </motion.div>
                 <div className="flex justify-center items-center max-w-80 min-w-80 ">

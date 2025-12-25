@@ -1,5 +1,9 @@
 import { motion } from 'framer-motion';
 import { useState } from 'react';
+import FormInput from '../components/FormInput';
+import Button from '../components/Button';
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -7,12 +11,6 @@ const Contact = () => {
         email: '',
         message: ''
     });
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        // Handle form submission here
-        console.log('Form submitted:', formData);
-    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -22,80 +20,61 @@ const Contact = () => {
         }));
     };
 
+    const form = useRef();
+
+    const sendEmail = (e) => {
+        e.preventDefault();
+
+        if (formData.name === '' || formData.message === '') {
+            alert('Please fill in the required fields');
+            return;
+        }
+
+        const templateParams = {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message
+        };
+
+        emailjs
+            .send('service_qvydesq', 'template_iqshhxo', templateParams, {
+                publicKey: 'wSKe5T2XrYEfJRgx9',
+            })
+            .then(
+                () => {
+                    setFormData({
+                        name: '',
+                        email: '',
+                        message: ''
+                    });
+                    alert('Message sent successfully');
+                },
+                (error) => {
+                    alert('Message failed to send');
+                },
+            );
+
+    };
+
     return (
-        <div className="min-h-screen py-20">
+        <div className=" py-20">
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
+                    className="flex gap-10"
                 >
-                    <h1 className="text-3xl mb-12">Get in Touch</h1>
-
-                    <form onSubmit={handleSubmit} className="space-y-8 max-w-xl">
-                        <div>
-                            <label
-                                htmlFor="name"
-                                className="block text-sm text-gray-600 mb-1"
-                            >
-                                Name
-                            </label>
-                            <input
-                                type="text"
-                                id="name"
-                                name="name"
-                                value={formData.name}
-                                onChange={handleChange}
-                                className="w-full px-4 py-2 border border-gray-300 focus:border-black focus:outline-none"
-                                required
-                            />
-                        </div>
-
-                        <div>
-                            <label
-                                htmlFor="email"
-                                className="block text-sm text-gray-600 mb-1"
-                            >
-                                Email
-                            </label>
-                            <input
-                                type="email"
-                                id="email"
-                                name="email"
-                                value={formData.email}
-                                onChange={handleChange}
-                                className="w-full px-4 py-2 border border-gray-300 focus:border-black focus:outline-none"
-                                required
-                            />
-                        </div>
-
-                        <div>
-                            <label
-                                htmlFor="message"
-                                className="block text-sm text-gray-600 mb-1"
-                            >
-                                Message
-                            </label>
-                            <textarea
-                                id="message"
-                                name="message"
-                                value={formData.message}
-                                onChange={handleChange}
-                                rows="6"
-                                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-black focus:border-transparent"
-                                required
-                            ></textarea>
-                        </div>
-
-                        <button
-                            type="submit"
-                            className="w-full bg-black text-white px-8 py-3 rounded-full hover:bg-gray-800 transition-colors"
-                        >
-                            Send Message
-                        </button>
-                    </form>
-
-                    <div className="mt-12 text-center">
+                    <div className="text-left">
+                        <h2 className="text-4xl mb-12">Let’s Connect!</h2>
+                        <p className="text-2xl">
+                            I’m always excited to hear from people about new ideas, design challenges, or opportunities to collaborate.
+                        </p>
+                        <br />
+                        <p className="text-2xl">
+                            Drop me a message — I’d love to hear from you!
+                        </p>
+                        <br />
                         <p className="text-gray-600 mb-4">
                             Or reach out directly at:{' '}
                             <a
@@ -106,14 +85,59 @@ const Contact = () => {
                             </a>
                         </p>
                         <a
-                            href="https://linkedin.com"
+                            href="https://www.linkedin.com/in/nicole-c-41790328a/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-black hover:underline"
+                            className="text-gray-600 mb-4 hover:text-black transition-colors"
                         >
-                            Connect on LinkedIn
+                            LinkedIn
                         </a>
                     </div>
+
+                    <form ref={form} className="space-y-8 flex-grow w-full">
+                        <FormInput
+                            label="Name *"
+                            id="name"
+                            name="name"
+                            type="text"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+
+                        <FormInput
+                            label="Email"
+                            id="email"
+                            name="email"
+                            type="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+
+                        <div>
+                            <label
+                                htmlFor="message"
+                                className="block text-left text-xl text-gray-900 mb-1"
+                            >
+                                Message *
+                            </label>
+                            <textarea
+                                id="message"
+                                name="message"
+                                value={formData.message}
+                                onChange={handleChange}
+                                rows="6"
+                                className="w-full px-4 py-2 border bg-transparent min-h-24"
+                                style={{ borderRadius: '10px', borderColor: '#3FA0A5' }}
+                                required
+                            ></textarea>
+                        </div>
+
+                        <Button onClick={sendEmail}>
+                            Send Message
+                        </Button>
+                    </form>
                 </motion.div>
             </div>
         </div>
