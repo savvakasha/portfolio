@@ -6,7 +6,7 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
 
     return (
-        <nav className="fixed left-0 top-0 h-full md:w-44 py-6 px-4 z-50 shadow-md flex flex-col md:justify-center" style={{ backgroundColor: '#F5EFEF' }}>
+        <nav className="fixed left-0 top-0 h-full md:w-44 py-6 px-4 z-50 shadow-md flex flex-col md:justify-center" style={{ backgroundColor: '#F5EFEF', borderRight: '1px solid #3FA0A5', borderColor: 'rgba(63, 160, 165, 0.4)' }}>
             <div
                 className="md:hidden">
                 {isOpen ? <FaTimes className="h-6 w-6" onClick={() => setIsOpen(!isOpen)} /> : <FaBars className="h-6 w-6" onClick={() => setIsOpen(!isOpen)} />}
