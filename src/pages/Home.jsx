@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion';
 import { useState, useEffect } from 'react';
-import { projects } from '../assets/project-data';
 import Banner from '../components/Banner';
 import outsmart from '../assets/images/intro-outsmart.png';
+import Button from '../components/Button';
 
 const Home = () => {
     const [filter, setFilter] = useState('all');
@@ -38,10 +38,10 @@ const Home = () => {
                     transition={{ duration: 0.8 }}
                     className="text-left"
                 >
-                    <h1 className="text-6xl mb-8 font-bold">
+                    <h1 className="text-6xl mb-8 font-medium" style={{ lineHeight: '1.2' }}>
                         Nicole Condon is a UX designer creating intuitive, inclusive, and interactive digital experiences
                     </h1>
-                    <h2 className="text-3xl text-gray-600 mb-8">
+                    <h2 className="text-3xl font-regular mb-8">
                         As a UX Designer and user researcher, I leverage my background in psychology and customer service to understand people, creating systems that are intuitive, helpful, and efficient.
                     </h2>
 
@@ -55,7 +55,7 @@ const Home = () => {
                 </div>
             </Banner>
             <section id="projects" className="container  my-16">
-                <div className="flex flex-col py-16 gap-12">
+                <div className="flex flex-col py-16 gap-20">
                     <IntroProjectItem
                         title="Designing OutSmart: A Competitive Skill-Based Gaming App"
                         tags="UX Design, UI Design, UX Research"
@@ -101,15 +101,16 @@ const IntroProjectItem = ({ title, tags, description, image, altText, isReversed
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            className={`flex gap-12 ${isReversed ? 'flex-row-reverse' : 'flex-row'}`}
+            className={`flex gap-16 ${isReversed ? 'flex-row-reverse' : 'flex-row'}`}
         >
             <div>
-                <img src={image} alt={altText} />
+                <img src={image} alt={altText} className='min-w-96 max-w-96' />
             </div>
-            <div>
-                <h3>{title}</h3>
-                <p>{tags}</p>
-                <p>{description}</p>
+            <div className='text-left'>
+                <h3 className="text-3xl font-semibold mb-4">{title}</h3>
+                <p className="text-2xl font-medium mb-4">{tags}</p>
+                <p className="text-xl font-regular mb-4">{description}</p>
+                <Button>View Project</Button>
             </div>
         </motion.div>
     );

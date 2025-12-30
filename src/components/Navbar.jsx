@@ -1,26 +1,42 @@
-import { Link } from 'react-router-dom';
-// import Image from 'next/image'
-import { ArrowDownTrayIcon } from '@heroicons/react/24/outline';
+import { FaBars, FaTimes } from 'react-icons/fa';
+import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Navbar = () => {
+    const [isOpen, setIsOpen] = useState(false);
+
     return (
-        <nav className="fixed left-0 top-0 h-full w-44 py-6 px-4 z-50 shadow-md flex flex-col justify-center gap-10" style={{ backgroundColor: '#F5EFEF' }}>
+        <nav className="fixed left-0 top-0 h-full md:w-44 py-6 px-4 z-50 shadow-md flex flex-col md:justify-center" style={{ backgroundColor: '#F5EFEF' }}>
+            <div
+                className="md:hidden">
+                {isOpen ? <FaTimes className="h-6 w-6" onClick={() => setIsOpen(!isOpen)} /> : <FaBars className="h-6 w-6" onClick={() => setIsOpen(!isOpen)} />}
+                {isOpen && (
+                    <motion.div initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.8 }} className="flex flex-col gap-4 mt-4">
+                        <NavbarItem icon="icon-work.svg" text="Work" href="/" isMobile={true} />
+                        <NavbarItem icon="icon-work.svg" text="About" href="/about" isMobile={true} />
+                        <NavbarItem icon="icon-work.svg" text="Contact" href="/contact" isMobile={true} />
+                    </motion.div>
+                )}
+            </div>
             {/* Desktop Navigation */}
-            {/* <NavbarItem icon="icon-work.svg" text="Work" href="/#projects" /> */}
-            <NavbarItem icon="icon-work.svg" text="Work" href="/" />
-            <NavbarItem icon="icon-work.svg" text="About" href="/about" />
-            <NavbarItem icon="icon-work.svg" text="Contact" href="/contact" />
+            <div className="flex-col md:gap-10 hidden md:flex">
+                <NavbarItem icon="icon-work.svg" text="Work" href="/" />
+                <NavbarItem icon="icon-work.svg" text="About" href="/about" />
+                <NavbarItem icon="icon-work.svg" text="Contact" href="/contact" />
+            </div>
         </nav>
     );
 };
 
 export default Navbar;
 
-const NavbarItem = ({ icon, text, href }) => {
+const NavbarItem = ({ icon, text, href, isMobile = false }) => {
     return (
         <div className="flex items-center gap-2">
-            <img src={icon} alt={text} className="h-6 w-6" />
-            <a href={href} className="text-2xl text-gray-900 hover:text-gray-600 transition-colors">{text}</a>
+            {isMobile ? <img src={icon} alt={text} className="h-4 w-4" /> : <img src={icon} alt={text} className="h-6 w-6" />}
+            {isMobile ? <a href={href} className="text-lg text-gray-900 hover:text-gray-600 transition-colors">{text}</a> : <a href={href} className="text-2xl text-gray-900 hover:text-gray-600 transition-colors">{text}</a>}
         </div>
     );
 };

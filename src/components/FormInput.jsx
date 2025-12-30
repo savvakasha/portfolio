@@ -3,7 +3,7 @@ const FormInput = ({ label, id, name, type = 'text', value, onChange, required =
         <div className="w-full">
             <label
                 htmlFor={id}
-                className="block text-left text-xl text-gray-900 mb-1"
+                className="block text-left text-lg md:text-xl text-gray-900 mb-1"
             >
                 {label}
             </label>

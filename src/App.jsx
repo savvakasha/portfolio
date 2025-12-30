@@ -13,7 +13,7 @@ function App() {
   return (
     <Router>
       <Navbar />
-      <main className="flex-grow w-full justify-self-end" style={{ width: 'calc(100% - 176px)' }}>
+      <main className="flex-grow justify-self-end md:w-[calc(100%-176px)] w-[calc(100%-56px)]">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/work" element={<Work />} />

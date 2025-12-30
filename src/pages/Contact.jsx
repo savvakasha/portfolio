@@ -4,6 +4,7 @@ import FormInput from '../components/FormInput';
 import Button from '../components/Button';
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
+import { FaLinkedin } from 'react-icons/fa';
 
 const Contact = () => {
     const [formData, setFormData] = useState({
@@ -57,21 +58,21 @@ const Contact = () => {
     };
 
     return (
-        <div className=" py-20">
+        <div className="py-6 md:py-20">
             <div className="container">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="flex gap-10"
+                    className="md:flex gap-10"
                 >
-                    <div className="text-left">
-                        <h2 className="text-4xl mb-12">Let’s Connect!</h2>
-                        <p className="text-2xl">
+                    <div className="text-left font-medium mb-4 md:mb-0">
+                        <h2 className="text-3xl md:text-4xl mb-6 md:mb-12">Let’s Connect!</h2>
+                        <p className="text-xl md:text-2xl">
                             I’m always excited to hear from people about new ideas, design challenges, or opportunities to collaborate.
                         </p>
                         <br />
-                        <p className="text-2xl">
+                        <p className="text-xl md:text-2xl">
                             Drop me a message — I’d love to hear from you!
                         </p>
                         <br />
@@ -88,9 +89,9 @@ const Contact = () => {
                             href="https://www.linkedin.com/in/nicole-c-41790328a/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-600 mb-4 hover:text-black transition-colors"
+                            className="text-gray-600 hover:text-black transition-colors"
                         >
-                            LinkedIn
+                            <FaLinkedin className="h-4 w-4" />
                         </a>
                     </div>
 
