@@ -6,6 +6,7 @@ import About from './pages/About';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import ProjectDetail from './pages/ProjectDetail';
+import OutSmart from './pages/projects/OutSmart';
 
 import './App.css';
 
@@ -20,6 +21,7 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
+          <Route path="/projects/outsmart" element={<OutSmart />} />
         </Routes>
       </main>
       <Footer />

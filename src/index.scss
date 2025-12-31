@@ -239,3 +239,49 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+.project {
+  &__title {
+    @apply text-6xl font-medium mb-16;
+    line-height: 1.4;
+  }
+
+  &__subtitle {
+    @apply text-4xl font-medium mb-6;
+  }
+
+  &__heading--small {
+    @apply text-3xl font-normal mb-8;
+  }
+
+  &__heading--medium {
+    @apply text-2xl font-medium mb-4;
+  }
+
+  &__text {
+    @apply font-normal mb-8;
+    font-size: 1.25rem;
+  }
+
+  &__description {
+    @apply text-sm font-normal mb-8;
+  }
+
+  &__divider {
+    @apply h-0.5 w-full rounded-full my-10;
+    background-color: #3FA0A5;
+    opacity: 0.4;
+  }
+
+  &__process-step {
+    @apply flex flex-col gap-4;
+  }
+
+  &__image {
+    @apply w-full h-full object-cover;
+  }
+
+  &__video {
+    @apply w-full h-full object-cover;
+  }
+}
