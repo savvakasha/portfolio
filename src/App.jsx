@@ -7,6 +7,9 @@ import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import ProjectDetail from './pages/ProjectDetail';
 import OutSmart from './pages/projects/OutSmart';
+import Nimbus from './pages/projects/Nimbus';
+import Wave from './pages/projects/Wave';
+import Bath from './pages/projects/Bath';
 
 import './App.css';
 
@@ -22,6 +25,9 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
           <Route path="/projects/outsmart" element={<OutSmart />} />
+          <Route path="/projects/nimbus" element={<Nimbus />} />
+          <Route path="/projects/wave" element={<Wave />} />
+          <Route path="/projects/bath" element={<Bath />} />
         </Routes>
       </main>
       <Footer />

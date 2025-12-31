@@ -1,6 +1,9 @@
 import { FaBars, FaTimes } from 'react-icons/fa';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
+import iconWork from '../assets/icons/icon-work.png';
+import iconAbout from '../assets/icons/icon-about.png';
+import iconContact from '../assets/icons/icon-contact.png';
 
 const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -14,17 +17,17 @@ const Navbar = () => {
                     <motion.div initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.8 }} className="flex flex-col gap-4 mt-4">
-                        <NavbarItem icon="icon-work.svg" text="Work" href="/" isMobile={true} />
-                        <NavbarItem icon="icon-work.svg" text="About" href="/about" isMobile={true} />
-                        <NavbarItem icon="icon-work.svg" text="Contact" href="/contact" isMobile={true} />
+                        <NavbarItem icon={iconWork} text="Work" href="/" isMobile={true} />
+                        <NavbarItem icon={iconAbout} text="About" href="/about" isMobile={true} />
+                        <NavbarItem icon={iconContact} text="Contact" href="/contact" isMobile={true} />
                     </motion.div>
                 )}
             </div>
             {/* Desktop Navigation */}
             <div className="flex-col md:gap-10 hidden md:flex">
-                <NavbarItem icon="icon-work.svg" text="Work" href="/" />
-                <NavbarItem icon="icon-work.svg" text="About" href="/about" />
-                <NavbarItem icon="icon-work.svg" text="Contact" href="/contact" />
+                <NavbarItem icon={iconWork} text="Work" href="/" />
+                <NavbarItem icon={iconAbout} text="About" href="/about" />
+                <NavbarItem icon={iconContact} text="Contact" href="/contact" />
             </div>
         </nav>
     );

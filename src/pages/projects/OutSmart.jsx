@@ -1,10 +1,20 @@
 import ProjectShortIntro from '../../components/projects/ProjectShortIntro';
 import ProjectDivider from '../../components/projects/ProjectDivider';
 import ProjectProcess from '../../components/projects/ProjectProcess';
+import ProjectImgContainer from '../../components/projects/ProjectImgContainer';
+import outsmart01 from '../../assets/images/outsmart/01.png';
+import outsmart02 from '../../assets/images/outsmart/02.png';
+import outsmart03 from '../../assets/images/outsmart/03.png';
+import outsmart04 from '../../assets/images/outsmart/04.png';
+import outsmart05 from '../../assets/images/outsmart/05.png';
+import outsmart06 from '../../assets/images/outsmart/06.png';
+import outsmart07 from '../../assets/images/outsmart/07.png';
+import outsmart08 from '../../assets/images/outsmart/08.png';
 
 const OutSmart = () => {
     return (
         <div className="container text-left">
+            <ProjectImgContainer images={[outsmart01, outsmart02]} className="mt-28" />
             <h1 className="project__title">Designing OutSmart: A Competitive Skill-Based Gaming App</h1>
             <ProjectShortIntro
                 type="UX Design, UI Design, UX Research"
@@ -59,6 +69,8 @@ const OutSmart = () => {
                 <h3 className="project__subtitle">{`3) Low Fidelity Prototyping`}</h3>
                 <p className="project__text">Building on insights from the competitor analysis, I began with quick sketches to explore different gameplay flows, menu structures, and reward mechanisms. These rough concepts helped visualize how users would navigate between mini-games, balances, and leaderboard screens. </p>
                 <p className="project__text">I then translated the strongest ideas into low-fidelity wireframes to map out the user journey and key interactions. The focus was on usability, clarity, and pacing rather than visual detail. These early prototypes became valuable discussion tools for aligning with engineers and stakeholders before moving into high-fidelity design.</p>
+                <ProjectImgContainer images={[outsmart03, outsmart04]} className="mb-8" />
+                <ProjectImgContainer images={[outsmart05]} />
             </div>
             <ProjectDivider />
             <div className='project__process-step'>
@@ -70,7 +82,9 @@ const OutSmart = () => {
             <div className='project__process-step'>
                 <h3 className="project__subtitle">{`5) High fidelity Designs`}</h3>
                 <p className="project__text">Building on the design system, I created 14 high-fidelity screens in Figma to visualize OutSmart’s full user experience. These included onboarding and sign-up flows, profile and settings pages, game detail views, and leaderboards.</p>
+                <ProjectImgContainer images={[outsmart06]} />
                 <p className="project__text">I designed both light and dark mode variations to ensure accessibility and visual flexibility across different user preferences. Each screen was built with attention to hierarchy, clarity, and consistency, aligning with the product’s energetic brand identity. These designs were also optimized for collaboration with developers, serving as the foundation for handoff and implementation in React Native.</p>
+                <ProjectImgContainer images={[outsmart07]} />
             </div>
             <ProjectDivider />
             <div className='project__process-step'>
@@ -81,6 +95,7 @@ const OutSmart = () => {
             <div className='project__process-step'>
                 <h3 className="project__subtitle">{`7) Final Design & Interactions`}</h3>
                 <p className="project__text">The final designs were completed, with polished screens and implemented interactions. Prototypes were built to demonstrate navigation and user flows, providing a realistic preview of the app experience for stakeholders and developers.</p>
+                <ProjectImgContainer images={[outsmart08]} />
             </div>
             <ProjectDivider />
             <div className='project__process-step'>

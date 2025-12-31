@@ -13,6 +13,7 @@ import kiosk from '../assets/images/intro-kiosk.png';
 
 import Button from '../components/Button';
 import { FaArrowDown } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
     // Scroll to section on load if hash exists in URL
@@ -69,7 +70,7 @@ const Home = () => {
                         description="Designing a real-money gaming app and its design system, improving trust and engagement across gameplay, navigation, and payments."
                         image={outsmart}
                         altText="OutSmart Logo"
-
+                        url="outsmart"
                     />
                     <IntroProjectItem
                         title="Co-Designing AI for Mindful Tech Use"
@@ -146,7 +147,8 @@ const Home = () => {
 
 export default Home;
 
-const IntroProjectItem = ({ title, tags, description, image, altText, isReversed }) => {
+const IntroProjectItem = ({ title, tags, description, image, altText, isReversed, url }) => {
+    const navigate = useNavigate();
     return (
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -161,7 +163,7 @@ const IntroProjectItem = ({ title, tags, description, image, altText, isReversed
                 <h3 className="text-xl md:text-3xl font-semibold mb-4">{title}</h3>
                 <p className="text-lg md:text-2xl font-medium mb-4">{tags}</p>
                 <p className="text-base md:text-xl font-regular mb-6">{description}</p>
-                <Button>View Project</Button>
+                <Button onClick={() => navigate(`/projects/${url}`)}>View Project</Button>
             </div>
         </motion.div>
     );
