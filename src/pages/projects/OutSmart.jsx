@@ -23,7 +23,7 @@ const OutSmart = () => {
             className="container text-left"
         >
             <ProjectImgContainer images={[outsmart01, outsmart02]} className="mt-28" />
-            <h1 className="project__title">Designing OutSmart: A Competitive Skill-Based Gaming App</h1>
+            <h1 className="project__title md:mt-28 mt-16">Designing OutSmart: A Competitive Skill-Based Gaming App</h1>
             <ProjectShortIntro
                 type="UX Design, UI Design, UX Research"
                 role="Lead UX Designer"
@@ -31,7 +31,7 @@ const OutSmart = () => {
                 timeline="8 months"
             />
             <ProjectDivider />
-            <div className="flex flex-row gap-16">
+            <div className="flex md:flex-row flex-col gap-16">
                 <div>
                     <p className="project__subtitle">Problem</p>
                     <p className="project__heading--medium">Balancing excitement with Trust </p>

@@ -19,7 +19,7 @@ const Charity = () => {
             }}
             className="container text-left"
         >
-            <h1 className="project__title mt-28">UX Evaluation for a UK Charity: Enhancing Findability and Cross-Site Flow</h1>
+            <h1 className="project__title md:mt-28 mt-16">UX Evaluation for a UK Charity: Enhancing Findability and Cross-Site Flow</h1>
             <ProjectShortIntro
                 type="UX Research, UX Design"
                 timeline="8 months"

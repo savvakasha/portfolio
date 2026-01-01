@@ -242,32 +242,43 @@ button:focus-visible {
 
 .project {
   &__title {
-    @apply text-6xl font-medium mb-16;
+    @apply text-4xl md:text-6xl font-medium mb-12 md:mb-16;
     line-height: 1.4;
   }
 
   &__subtitle {
-    @apply text-4xl font-medium mb-6;
-    white-space: nowrap;
+    @apply text-2xl md:text-4xl font-medium mb-4 md:mb-6;
   }
 
   &__heading--small {
-    @apply font-normal mb-8;
-    font-size: 1.7rem;
+    @apply font-normal mb-6 md:mb-8;
+    font-size: 1.4rem;
+
+    @screen md {
+      font-size: 1.7rem;
+    }
   }
 
   &__heading--medium {
     @apply font-medium mb-4;
-    font-size: 1.4rem;
+    font-size: 1.2rem;
+
+    @screen md {
+      font-size: 1.4rem;
+    }
   }
 
   &__text {
-    @apply font-normal mb-8;
-    font-size: 1.25rem;
+    @apply font-normal mb-6 md:mb-8;
+    font-size: 1.05rem;
+
+    @screen md {
+      font-size: 1.25rem;
+    }
   }
 
   &__description {
-    @apply text-sm font-normal mb-8;
+    @apply text-xs md:text-sm font-normal mb-8;
   }
 
   &__divider {
@@ -277,7 +288,7 @@ button:focus-visible {
   }
 
   &__process-step {
-    @apply flex flex-col gap-4;
+    @apply flex flex-col md:gap-4 gap-1;
   }
 
   &__image {

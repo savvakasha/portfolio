@@ -1,6 +1,6 @@
 const ProjectProcess = ({ steps }) => {
     return (
-        <div className="flex flex-row items-start gap-2">
+        <div className="flex flex-row flex-wrap items-start gap-2">
             {steps.map((step, index) => (
                 <div className="flex flex-col items-start gap-2" key={index}>
                     <div className="flex flex-row items-center gap-2">

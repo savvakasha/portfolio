@@ -16,7 +16,7 @@ const Bath = () => {
             }}
             className="container text-left"
         >
-            <h1 className="project__title mt-28">Bath Professional (Improving Usability for a Small Business)</h1>
+            <h1 className="project__title md:mt-28 mt-16">Bath Professional (Improving Usability for a Small Business)</h1>
             <ProjectShortIntro
                 type="UX Design, UX Research"
                 role="Lead UX Researcher & UX Designer"
@@ -24,7 +24,7 @@ const Bath = () => {
                 timeline="6 months"
             />
             <ProjectDivider />
-            <div className="flex flex-row gap-16">
+            <div className="flex md:flex-row flex-col gap-16">
                 <div>
                     <p className="project__subtitle">Problem</p>
                     <p className="project__text">The company’s website looked outdated, lacked clear navigation, and did not effectively communicate services or build trust with potential customers. This poor experience contributed to low engagement and limited client inquiries, making it difficult for the business to convert visitors into customers.</p>

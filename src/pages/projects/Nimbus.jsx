@@ -19,7 +19,7 @@ const Nimbus = () => {
             }}
             className="container text-left"
         >
-            <h1 className="project__title mt-28">Co-Designing AI for Mindful Tech Use</h1>
+            <h1 className="project__title md:mt-28 mt-16">Co-Designing AI for Mindful Tech Use</h1>
             <ProjectShortIntro
                 type="UX Research, UX Design, Product Design"
                 role="UX Researcher, UX Designer"
@@ -27,7 +27,7 @@ const Nimbus = () => {
                 timeline="5 months"
             />
             <ProjectDivider />
-            <div className="flex flex-row gap-16">
+            <div className="flex md:flex-row flex-col gap-16">
                 <div>
                     <p className="project__subtitle">Problem</p>
                     <p className="project__text">Digital overuse has become a widespread challenge, yet most existing self-regulation tools feel rigid, impersonal, and often fail to create lasting change. Little is known about how these tools affect users over time, and even less about how Artificial Intelligence and co-design could be combined to make them more effective.</p>

@@ -23,7 +23,7 @@ const Celestial = () => {
             }}
             className="container text-left"
         >
-            <h1 className="project__title mt-28">Designing VR for Mindfulness and Space Exploration</h1>
+            <h1 className="project__title md:mt-28 mt-16">Designing VR for Mindfulness and Space Exploration</h1>
             <ProjectShortIntro
                 type="UX Design, Game Design, Game Development"
                 timeline="March – May 2024"

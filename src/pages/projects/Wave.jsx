@@ -12,7 +12,7 @@ const Wave = () => {
                 ease: [0.25, 0.1, 0.25, 1] // Custom easing for smooth reveal
             }}
             className="container text-left">
-            <h1 className="project__title mt-28">4th Wave Business Solutions: Streamlining Workflows for Telecom Field Technicians</h1>
+            <h1 className="project__title md:mt-28 mt-16">4th Wave Business Solutions: Streamlining Workflows for Telecom Field Technicians</h1>
             <ProjectShortIntro
                 type="UX Design, UX Research"
                 role="Lead UX Researcher & UX Designer"
@@ -20,7 +20,7 @@ const Wave = () => {
                 timeline="7 months"
             />
             <ProjectDivider />
-            <div className="flex flex-row gap-16">
+            <div className="flex md:flex-row flex-col gap-16">
                 <div>
                     <p className="project__subtitle">Problem</p>
                     <p className="project__text">Technicians relied on an outdated tool to manage service tickets, update project statuses, and log field data. The interface was unintuitive, slow, and inconsistent across devices, causing reporting errors, delays, and frustration. The company needed a more efficient tool to improve accuracy and streamline communication between field teams and operations.</p>

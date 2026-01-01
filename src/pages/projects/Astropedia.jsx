@@ -19,7 +19,7 @@ const Astropedia = () => {
             }}
             className="container text-left"
         >
-            <h1 className="project__title text-center mt-28">Astropedia</h1>
+            <h1 className="project__title text-center md:mt-28 mt-16">Astropedia</h1>
             <ProjectShortIntro timeline="February – May 2024" role="Lead UX Designer and Lead Developer" />
             <ProjectDivider />
             <div>

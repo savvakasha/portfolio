@@ -17,7 +17,7 @@ const Kiosk = () => {
             }}
             className="container text-left"
         >
-            <h1 className="project__title mt-28">Interactive Library Kiosk</h1>
+            <h1 className="project__title md:mt-28 mt-16">Interactive Library Kiosk</h1>
             <ProjectShortIntro
                 type="UX Research, UX Design"
                 timeline="Nov 2023 – Dec 2023"
