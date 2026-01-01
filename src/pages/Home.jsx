@@ -63,7 +63,7 @@ const Home = () => {
     return (
         <div>
             {/* Hero Section */}
-            <Banner className="relative pt-10 md:pt-32">
+            <Banner className="relative pt-10 md:pt-24">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
