@@ -6,10 +6,18 @@ import nyc02 from '../../assets/images/nyc/02.png';
 import nyc03 from '../../assets/images/nyc/03.png';
 import nyc04 from '../../assets/images/nyc/04.png';
 import nyc05 from '../../assets/images/nyc/05.png';
-
+import { motion } from 'framer-motion';
 const NYC = () => {
     return (
-        <div className="container text-left">
+        <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1] // Custom easing for smooth reveal
+            }}
+            className="container text-left"
+        >
             <h1 className="project__title text-center mt-28">New York City Tourism Website</h1>
             <ProjectShortIntro
                 type="Information Architecture, UX Design, UX Research"
@@ -118,7 +126,7 @@ const NYC = () => {
             </div>
             <ProjectDivider />
             <p className="project__heading--medium">Full report available upon request.</p>
-        </div>
+        </motion.div>
     );
 };
 

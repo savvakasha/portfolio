@@ -10,10 +10,19 @@ import celestial05 from '../../assets/images/celestial/05.png';
 import celestial06 from '../../assets/images/celestial/06.png';
 import celestial07 from '../../assets/images/celestial/07.png';
 import celestial08 from '../../assets/images/celestial/08.png';
+import { motion } from 'framer-motion';
 
 const Celestial = () => {
     return (
-        <div className="container text-left">
+        <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1] // Custom easing for smooth reveal
+            }}
+            className="container text-left"
+        >
             <h1 className="project__title mt-28">Designing VR for Mindfulness and Space Exploration</h1>
             <ProjectShortIntro
                 type="UX Design, Game Design, Game Development"
@@ -101,7 +110,7 @@ const Celestial = () => {
             </div>
             <ProjectDivider />
             <p className="project__heading--medium">Full report available upon request.</p>
-        </div>
+        </motion.div>
     );
 };
 

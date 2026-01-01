@@ -7,10 +7,18 @@ import nimbus02 from '../../assets/images/nimbus/02.png';
 import nimbus03 from '../../assets/images/nimbus/03.png';
 import nimbus04 from '../../assets/images/nimbus/04.png';
 import nimbus05 from '../../assets/images/nimbus/05.png';
-
+import { motion } from 'framer-motion';
 const Nimbus = () => {
     return (
-        <div className="container text-left">
+        <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1] // Custom easing for smooth reveal
+            }}
+            className="container text-left"
+        >
             <h1 className="project__title mt-28">Co-Designing AI for Mindful Tech Use</h1>
             <ProjectShortIntro
                 type="UX Research, UX Design, Product Design"
@@ -196,7 +204,7 @@ const Nimbus = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

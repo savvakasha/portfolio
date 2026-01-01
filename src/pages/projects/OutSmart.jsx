@@ -10,10 +10,18 @@ import outsmart05 from '../../assets/images/outsmart/05.png';
 import outsmart06 from '../../assets/images/outsmart/06.png';
 import outsmart07 from '../../assets/images/outsmart/07.png';
 import outsmart08 from '../../assets/images/outsmart/08.png';
-
+import { motion } from 'framer-motion';
 const OutSmart = () => {
     return (
-        <div className="container text-left">
+        <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1] // Custom easing for smooth reveal
+            }}
+            className="container text-left"
+        >
             <ProjectImgContainer images={[outsmart01, outsmart02]} className="mt-28" />
             <h1 className="project__title">Designing OutSmart: A Competitive Skill-Based Gaming App</h1>
             <ProjectShortIntro
@@ -137,7 +145,7 @@ const OutSmart = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

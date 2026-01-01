@@ -13,10 +13,12 @@ import kiosk from '../assets/images/intro-kiosk.png';
 import nyc from '../assets/images/intro-nyc.png';
 
 import Button from '../components/Button';
-import { FaArrowDown } from 'react-icons/fa';
+import { FaArrowDown, FaArrowUp } from 'react-icons/fa';
 import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
+    const [showBackToTop, setShowBackToTop] = useState(false);
+
     // Scroll to section on load if hash exists in URL
     useEffect(() => {
         // Get the hash from the URL (e.g., #projects)
@@ -37,6 +39,26 @@ const Home = () => {
             }
         }
     }, []);
+
+    // Show back to top button when user scrolls near the end
+    useEffect(() => {
+        const handleScroll = () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
+
+            // Show button when user has scrolled 70% of the page
+            setShowBackToTop(scrollPercentage > 0.7);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
 
     return (
         <div>
@@ -153,6 +175,21 @@ const Home = () => {
                     />
                 </div>
             </section>
+
+            {/* Back to Top Button */}
+            {showBackToTop && (
+                <motion.button
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    onClick={scrollToTop}
+                    className="fixed flex items-center justify-center gap-2 bottom-8 right-[50%] translate-x-1/2 z-50 p-4 rounded-full shadow-xl bg-[#3FA0A5] text-white border border-[#2B6669] hover:bg-[#358489] hover:border-[#358489] transition-colors"
+                    aria-label="Back to top"
+                >
+                    back to top
+                    <FaArrowUp className="h-6 w-6" />
+                </motion.button>
+            )}
         </div>
     );
 };

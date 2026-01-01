@@ -5,10 +5,18 @@ import kiosk01 from '../../assets/images/kiosk/01.png';
 import kiosk02 from '../../assets/images/kiosk/02.png';
 import kiosk03 from '../../assets/images/kiosk/03.png';
 import kiosk04 from '../../assets/images/kiosk/04.png';
-
+import { motion } from 'framer-motion';
 const Kiosk = () => {
     return (
-        <div className="container text-left">
+        <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1] // Custom easing for smooth reveal
+            }}
+            className="container text-left"
+        >
             <h1 className="project__title mt-28">Interactive Library Kiosk</h1>
             <ProjectShortIntro
                 type="UX Research, UX Design"
@@ -92,7 +100,7 @@ const Kiosk = () => {
             </div>
             <ProjectDivider />
             <p className="project__heading--medium">Full report, wireframes, and storyboard available upon request.</p>
-        </div>
+        </motion.div>
     );
 };
 

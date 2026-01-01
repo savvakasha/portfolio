@@ -1,10 +1,17 @@
 import ProjectShortIntro from '../../components/projects/ProjectShortIntro';
 import ProjectDivider from '../../components/projects/ProjectDivider';
 import ProjectProcess from '../../components/projects/ProjectProcess';
-
+import { motion } from 'framer-motion';
 const Wave = () => {
     return (
-        <div className="container text-left">
+        <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1] // Custom easing for smooth reveal
+            }}
+            className="container text-left">
             <h1 className="project__title mt-28">4th Wave Business Solutions: Streamlining Workflows for Telecom Field Technicians</h1>
             <ProjectShortIntro
                 type="UX Design, UX Research"
@@ -110,7 +117,7 @@ const Wave = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

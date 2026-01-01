@@ -1,9 +1,17 @@
 import ProjectShortIntro from '../../components/projects/ProjectShortIntro';
 import ProjectDivider from '../../components/projects/ProjectDivider';
-
+import { motion } from 'framer-motion';
 const Refuge = () => {
     return (
-        <div className="container text-left">
+        <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1] // Custom easing for smooth reveal
+            }}
+            className="container text-left"
+        >
             <h1 className="project__title mt-28">Refuge Network International Accessibility Audit</h1>
             <ProjectShortIntro
                 type="UX Research, Accessibility, Inclusive Design"
@@ -103,7 +111,7 @@ const Refuge = () => {
             </div>
             <ProjectDivider />
             <p className="project__heading--medium">Full report available upon request.</p>
-        </div>
+        </motion.div>
     );
 };
 

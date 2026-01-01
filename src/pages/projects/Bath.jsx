@@ -3,10 +3,19 @@ import ProjectDivider from '../../components/projects/ProjectDivider';
 import ProjectProcess from '../../components/projects/ProjectProcess';
 import ProjectImgContainer from '../../components/projects/ProjectImgContainer';
 import bath01 from '../../assets/images/bath/01.png';
+import { motion } from 'framer-motion';
 
 const Bath = () => {
     return (
-        <div className="container text-left">
+        <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1] // Custom easing for smooth reveal
+            }}
+            className="container text-left"
+        >
             <h1 className="project__title mt-28">Bath Professional (Improving Usability for a Small Business)</h1>
             <ProjectShortIntro
                 type="UX Design, UX Research"
@@ -110,7 +119,7 @@ const Bath = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 };
 

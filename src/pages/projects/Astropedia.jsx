@@ -6,10 +6,19 @@ import astropedia02 from '../../assets/images/astropedia/02.png';
 import astropedia03 from '../../assets/images/astropedia/03.png';
 import astropedia04 from '../../assets/images/astropedia/04.png';
 import astropedia05 from '../../assets/images/astropedia/05.png';
+import { motion } from 'framer-motion';
 
 const Astropedia = () => {
     return (
-        <div className="container text-left">
+        <motion.div
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{
+                duration: 1.2,
+                ease: [0.25, 0.1, 0.25, 1] // Custom easing for smooth reveal
+            }}
+            className="container text-left"
+        >
             <h1 className="project__title text-center mt-28">Astropedia</h1>
             <ProjectShortIntro timeline="February – May 2024" role="Lead UX Designer and Lead Developer" />
             <ProjectDivider />
@@ -90,7 +99,7 @@ const Astropedia = () => {
             </div>
             <ProjectDivider />
             <p className="project__heading--medium">Full report available upon request.</p>
-        </div>
+        </motion.div>
     );
 };
 

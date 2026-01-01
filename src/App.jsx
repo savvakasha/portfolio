@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Work from './pages/Work';
 import About from './pages/About';
@@ -22,6 +23,7 @@ import './App.css';
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <main className="flex-grow justify-self-end md:w-[calc(100%-176px)] w-[calc(100%-56px)]">
         <Routes>
