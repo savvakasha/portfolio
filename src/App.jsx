@@ -10,6 +10,12 @@ import OutSmart from './pages/projects/OutSmart';
 import Nimbus from './pages/projects/Nimbus';
 import Wave from './pages/projects/Wave';
 import Bath from './pages/projects/Bath';
+import Charity from './pages/projects/Charity';
+import Celestial from './pages/projects/Celestial';
+import Astropedia from './pages/projects/Astropedia';
+import Refuge from './pages/projects/Refuge';
+import Kiosk from './pages/projects/Kiosk';
+import NYC from './pages/projects/NYC';
 
 import './App.css';
 
@@ -28,6 +34,12 @@ function App() {
           <Route path="/projects/nimbus" element={<Nimbus />} />
           <Route path="/projects/wave" element={<Wave />} />
           <Route path="/projects/bath" element={<Bath />} />
+          <Route path="/projects/charity" element={<Charity />} />
+          <Route path="/projects/celestial" element={<Celestial />} />
+          <Route path="/projects/astropedia" element={<Astropedia />} />
+          <Route path="/projects/refuge" element={<Refuge />} />
+          <Route path="/projects/kiosk" element={<Kiosk />} />
+          <Route path="/projects/nyc" element={<NYC />} />
         </Routes>
       </main>
       <Footer />

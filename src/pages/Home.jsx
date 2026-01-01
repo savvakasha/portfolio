@@ -117,7 +117,7 @@ const Home = () => {
                         description="Developing a user-centered VR journey that supports relaxation and learning, integrating mindfulness, personalization, and accessible spatial design."
                         image={celestial}
                         altText="Celestial Mode Screenshot"
-
+                        url="celestial"
                     />
                     <IntroProjectItem
                         title="Astropedia: An Interactive Beginner’s Guide to Astrology"
@@ -125,7 +125,7 @@ const Home = () => {
                         description="Designing and developing a beginner-friendly astrology website with structured learning, interactive features, and a knowledge quiz using HTML, CSS, and JavaScript."
                         image={astropedia}
                         altText="Astropedia Screenshot"
-
+                        url="astropedia"
                     />
                     <IntroProjectItem
                         title="Accessibility Audit for Refuge Network International"
@@ -133,7 +133,7 @@ const Home = () => {
                         description="Evaluating a nonprofit website for accessibility using manual, automated, and assistive-tech testing, prioritizing severe issues and providing practical redesign solutions."
                         image={refuge}
                         altText="Refuge Network International Logo"
-
+                        url="refuge"
                     />
                     <IntroProjectItem
                         title="Interactive Library Kiosk: Enhancing Visitor Engagement"
@@ -141,7 +141,7 @@ const Home = () => {
                         description="Creating a user-centered library kiosk concept to enhance resource discovery, informed by interviews, personas, prototyping, and usability testing."
                         image={kiosk}
                         altText="Library Kiosk Screenshot"
-
+                        url="kiosk"
                     />
                     <IntroProjectItem
                         title="NYC Tourism Website: Designing Clear Information Architecture"
