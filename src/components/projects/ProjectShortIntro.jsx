@@ -1,6 +1,6 @@
 const ProjectShortIntro = ({ type, role, deliverables, timeline }) => {
     return (
-        <div className="flex flex-row gap-16 self-center text-center">
+        <div className="flex flex-row gap-16 self-center justify-self-center text-center">
             {type && <div>
                 <p className="project__subtitle">Project Type</p>
                 <p className="project__heading--small">{type}</p>

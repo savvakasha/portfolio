@@ -10,6 +10,7 @@ import celestial from '../assets/images/intro-celestial.png';
 import astropedia from '../assets/images/intro-astropedia.png';
 import refuge from '../assets/images/intro-refuge.png';
 import kiosk from '../assets/images/intro-kiosk.png';
+import nyc from '../assets/images/intro-nyc.png';
 
 import Button from '../components/Button';
 import { FaArrowDown } from 'react-icons/fa';
@@ -108,7 +109,7 @@ const Home = () => {
                         description="Evaluating a charity’s main site and microsite through usability testing and analysis, revealing key friction points and delivering actionable, user-driven recommendations."
                         image={diabetes}
                         altText="Diabetes UK Logo"
-
+                        url="charity"
                     />
                     <IntroProjectItem
                         title="Designing VR for Mindfulness and Space Exploration"
@@ -141,6 +142,14 @@ const Home = () => {
                         image={kiosk}
                         altText="Library Kiosk Screenshot"
 
+                    />
+                    <IntroProjectItem
+                        title="NYC Tourism Website: Designing Clear Information Architecture"
+                        tags="Information Architecture, UX Research, UX Design"
+                        description="Developing a user-centered NYC tourism website concept, focusing on clear information architecture, intuitive navigation, and user-validated wireframes."
+                        image={nyc}
+                        altText="NYC Tourism Website Screenshot"
+                        url="nyc"
                     />
                 </div>
             </section>
