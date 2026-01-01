@@ -1,17 +1,29 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 import Work from './pages/Work';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import ProjectDetail from './pages/ProjectDetail';
+import OutSmart from './pages/projects/OutSmart';
+import Nimbus from './pages/projects/Nimbus';
+import Wave from './pages/projects/Wave';
+import Bath from './pages/projects/Bath';
+import Charity from './pages/projects/Charity';
+import Celestial from './pages/projects/Celestial';
+import Astropedia from './pages/projects/Astropedia';
+import Refuge from './pages/projects/Refuge';
+import Kiosk from './pages/projects/Kiosk';
+import NYC from './pages/projects/NYC';
 
 import './App.css';
 
 function App() {
   return (
     <Router>
+      <ScrollToTop />
       <Navbar />
       <div className="min-h-screen flex flex-col w-full max-w-6xl mx-auto px-4 sm:px-6">
         <main className="flex-grow ml-auto w-full">

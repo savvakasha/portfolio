@@ -1,11 +1,23 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
-import profile from '../assets/avatar1.jpg';
 import { useState, useEffect } from 'react';
-import { projects } from '../assets/project-data';
+import Banner from '../components/Banner';
+import outsmart from '../assets/images/intro-outsmart.png';
+import nimbus from '../assets/images/intro-nimbus.png';
+import wave from '../assets/images/intro-wave.png';
+import bath from '../assets/images/intro-bath.png';
+import diabetes from '../assets/images/intro-diabetes.png';
+import celestial from '../assets/images/intro-celestial.png';
+import astropedia from '../assets/images/intro-astropedia.png';
+import refuge from '../assets/images/intro-refuge.png';
+import kiosk from '../assets/images/intro-kiosk.png';
+import nyc from '../assets/images/intro-nyc.png';
+
+import Button from '../components/Button';
+import { FaArrowDown, FaArrowUp } from 'react-icons/fa';
+import { useNavigate } from 'react-router-dom';
 
 const Home = () => {
-    const [filter, setFilter] = useState('all');
+    const [showBackToTop, setShowBackToTop] = useState(false);
 
     // Scroll to section on load if hash exists in URL
     useEffect(() => {
@@ -28,135 +40,177 @@ const Home = () => {
         }
     }, []);
 
+    // Show back to top button when user scrolls near the end
+    useEffect(() => {
+        const handleScroll = () => {
+            const windowHeight = window.innerHeight;
+            const documentHeight = document.documentElement.scrollHeight;
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            const scrollPercentage = (scrollTop + windowHeight) / documentHeight;
+
+            // Show button when user has scrolled 70% of the page
+            setShowBackToTop(scrollPercentage > 0.7);
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    const scrollToTop = () => {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+
     return (
-        <div className="min-h-screen">
+        <div>
             {/* Hero Section */}
-            <section className="container flex my-16 bg-gray-100 py-10">
+            <Banner className="relative pt-10 md:pt-32">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     className="text-left"
                 >
-                    <h1 className="text-4xl mb-8 font-bold">
-                        Hi, I'm Nicole
+                    <h1 className="text-3xl md:text-6xl font-medium mb-5 md:mb-8" style={{ lineHeight: '1.2' }}>
+                        Nicole Condon is a UX designer creating intuitive, inclusive, and interactive digital experiences
                     </h1>
-                    <p className="text-xl text-gray-600 mb-8">
-                        I am a user researcher and UX designer.
-                    </p>
-                    <p className="text-lg text-gray-600 mb-8 max-w-2xl">
-                        As a user researcher and UX designer, I draw on my background in psychology
-                        and customer service to deeply understand people, ensuring systems are
-                        designed to be intuitive, helpful, and efficient.
-                    </p>
-                    <div className="flex space-x-6 mb-8">
-                        <a
-                            href="mailto:nicolec0225a@gmail.com"
-                            className="text-sm text-gray-600 hover:text-black transition-colors"
-                        >
-                            nicolec0225a@gmail.com
-                        </a>
-                        <a
-                            href="https://linkedin.com"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="text-sm text-gray-600 hover:text-black transition-colors"
-                        >
-                            LinkedIn
-                        </a>
-                    </div>
-                    <a
-                        href="/#projects"
-                        className="btn mb-8"
-                    >
-                        View My Work
-                    </a>
-                    <p><b>My toolbox:</b> Figma, Qualtrics, Unity, Optimal Workshop, MAXQDA</p>
+                    <h2 className="text-xl md:text-3xl font-regular mb-4 md:mb-8">
+                        As a UX Designer and user researcher, I leverage my background in psychology and customer service to understand people, creating systems that are intuitive, helpful, and efficient.
+                    </h2>
                 </motion.div>
-                <div className="flex justify-center items-center ">
-                    <img src={profile} alt="Profile" className="rounded-md shadow-lg w-3/4" />
+                <div className="flex justify-center items-center md:max-w-80 md:min-w-80 max-w-50 min-w-50 ">
+                    <img src="avatar.png" alt="Profile" className="rounded-md shadow-lg md:w-3/4 w-2/4" />
+                </div>
+                <img src="icon-chevron-down.png" alt="chevron down" className="absolute bottom-0 left-[50%] -translate-x-1/2 translate-y-1/2 " />
+            </Banner>
+            <section id="projects" className="container my-16">
+                <div className="flex flex-col py-6 md:py-16 gap-20 md:gap-28">
+                    <IntroProjectItem
+                        title="Designing OutSmart: A Competitive Skill-Based Gaming App"
+                        tags="UX Design, UI Design, UX Research"
+                        description="Designing a real-money gaming app and its design system, improving trust and engagement across gameplay, navigation, and payments."
+                        image={outsmart}
+                        altText="OutSmart Logo"
+                        url="outsmart"
+                    />
+                    <IntroProjectItem
+                        title="Co-Designing AI for Mindful Tech Use"
+                        tags="UX Research, UX Design, Product Design"
+                        description="Researching and co-designing an AI-enhanced tool that supports digital self-regulation, resulting in Nimbus; an adaptive concept promoting mindful, tech use."
+                        image={nimbus}
+                        altText="Nimbus Logo"
+                        isReversed={true}
+                        url="nimbus"
+                    />
+                    <IntroProjectItem
+                        title="Streamlining Workflows for Telecom Field Technicians"
+                        tags="UX Design, UX Research"
+                        description="Leading UX research and design for digital infrastructure tools, mapping journeys, testing usability, and creating improved client and field tech experiences."
+                        image={wave}
+                        altText="Telecom Logo"
+                        url="wave"
+                    />
+                    <IntroProjectItem
+                        title="Improving Usability for a Small Business"
+                        tags="UX Design, UX Research"
+                        description="Identifying usability problems, validating IA with users, and presenting a data-backed, high-fidelity website redesign to stakeholders."
+                        image={bath}
+                        altText="Bath Professional Logo"
+                        isReversed={true}
+                        url="bath"
+                    />
+                    <div className='md:py-6'>
+                        <p className="flex self-center items-center gap-2 text-2xl font-medium mb-4" style={{ color: '#3FA0A5' }}><FaArrowDown className="h-6 w-6" />Personal Projects<FaArrowDown className="h-6 w-6" /></p>
+                        <div className='h-1 w-full' style={{ backgroundColor: '#3FA0A5' }}></div>
+                    </div>
+                    <IntroProjectItem
+                        title="UX Evaluation for a UK Charity: Enhancing Findability and Cross-Site Flow"
+                        tags="UX Research, UX Design"
+                        description="Evaluating a charity’s main site and microsite through usability testing and analysis, revealing key friction points and delivering actionable, user-driven recommendations."
+                        image={diabetes}
+                        altText="Diabetes UK Logo"
+                        url="charity"
+                    />
+                    <IntroProjectItem
+                        title="Designing VR for Mindfulness and Space Exploration"
+                        tags="UX Design, Game Design, Game Development"
+                        description="Developing a user-centered VR journey that supports relaxation and learning, integrating mindfulness, personalization, and accessible spatial design."
+                        image={celestial}
+                        altText="Celestial Mode Screenshot"
+                        url="celestial"
+                    />
+                    <IntroProjectItem
+                        title="Astropedia: An Interactive Beginner’s Guide to Astrology"
+                        tags="UX Design, Front-End Development"
+                        description="Designing and developing a beginner-friendly astrology website with structured learning, interactive features, and a knowledge quiz using HTML, CSS, and JavaScript."
+                        image={astropedia}
+                        altText="Astropedia Screenshot"
+                        url="astropedia"
+                    />
+                    <IntroProjectItem
+                        title="Accessibility Audit for Refuge Network International"
+                        tags="UX Research, Accessibility, Inclusive Design"
+                        description="Evaluating a nonprofit website for accessibility using manual, automated, and assistive-tech testing, prioritizing severe issues and providing practical redesign solutions."
+                        image={refuge}
+                        altText="Refuge Network International Logo"
+                        url="refuge"
+                    />
+                    <IntroProjectItem
+                        title="Interactive Library Kiosk: Enhancing Visitor Engagement"
+                        tags="UX Research, UX Design"
+                        description="Creating a user-centered library kiosk concept to enhance resource discovery, informed by interviews, personas, prototyping, and usability testing."
+                        image={kiosk}
+                        altText="Library Kiosk Screenshot"
+                        url="kiosk"
+                    />
+                    <IntroProjectItem
+                        title="NYC Tourism Website: Designing Clear Information Architecture"
+                        tags="Information Architecture, UX Research, UX Design"
+                        description="Developing a user-centered NYC tourism website concept, focusing on clear information architecture, intuitive navigation, and user-validated wireframes."
+                        image={nyc}
+                        altText="NYC Tourism Website Screenshot"
+                        url="nyc"
+                    />
                 </div>
             </section>
-            <section id="projects" className="container bg-gray-100 my-16">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.8 }}
-                    className="py-16"
+
+            {/* Back to Top Button */}
+            {showBackToTop && (
+                <motion.button
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={{ opacity: 1, scale: 1 }}
+                    exit={{ opacity: 0, scale: 0.8 }}
+                    onClick={scrollToTop}
+                    className="fixed flex items-center justify-center gap-2 bottom-8 right-[50%] translate-x-1/2 z-50 p-4 rounded-full shadow-xl bg-[#3FA0A5] text-white border border-[#2B6669] hover:bg-[#358489] hover:border-[#358489] transition-colors"
+                    aria-label="Back to top"
                 >
-                    <h2 className="text-2xl font-bold mb-8">Featured Projects</h2>
-
-                    <div className="mb-8">
-                        <div className="flex justify-center space-x-4">
-                            <button
-                                className={`px-4 py-2 rounded transition-colors ${filter === 'all'
-                                    ? 'bg-blue-500 text-white'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                                    }`}
-                                onClick={() => setFilter('all')}
-                            >
-                                All Projects
-                            </button>
-                            <button
-                                className={`px-4 py-2 rounded transition-colors ${filter === 'research'
-                                    ? 'bg-blue-500 text-white'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                                    }`}
-                                onClick={() => setFilter('research')}
-                            >
-                                Research
-                            </button>
-                            <button
-                                className={`px-4 py-2 rounded transition-colors ${filter === 'design'
-                                    ? 'bg-blue-500 text-white'
-                                    : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                                    }`}
-                                onClick={() => setFilter('design')}
-                            >
-                                Design
-                            </button>
-                        </div>
-                    </div>
-
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                        {projects.filter(project => {
-                            if (filter === 'all') return true;
-                            return project.categories?.includes(filter.charAt(0).toUpperCase() + filter.slice(1));
-                        }).map((project, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0 }}
-                                animate={{ opacity: 1 }}
-                                transition={{ duration: 0.5, delay: index * 0.1 }}
-                                className="border bg-cover border-gray-200 rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-transform hover:scale-105  transition-shadow"
-                                style={{
-                                    backgroundImage: `url(${project.bgImage})`,
-                                    backgroundBlendMode: 'overlay',
-                                    background: `url(${project.bgImage}) , linear-gradient(rgba(255,255,255,0.6),rgba(255,255,255,0.6))`,
-                                    backgroundSize: 'cover',
-                                    backgroundPosition: 'center'
-                                }}
-                            >
-                                <div className="p-6 h-full bg-cover bg-center" style={{ backdropFilter: 'blur(4px)' }} >
-                                    <span className="text-sm text-gray-500 mb-2 block">
-                                        {project.category}
-                                    </span>
-                                    <h3 className="text-xl font-bold mb-2">{project.title}</h3>
-                                    <p className="text-gray-600 font-bold mb-4">{project.shortDescription}</p>
-                                    <Link
-                                        to={`/project/${project.id}`}
-                                        className="text-sm font-medium text-blue-600 hover:text-blue-800 hover:underline"
-                                    >
-                                        View Project →
-                                    </Link>
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </motion.div>
-            </section>
+                    back to top
+                    <FaArrowUp className="h-6 w-6" />
+                </motion.button>
+            )}
         </div>
     );
 };
 
-export default Home; 
+export default Home;
+
+const IntroProjectItem = ({ title, tags, description, image, altText, isReversed, url }) => {
+    const navigate = useNavigate();
+    return (
+        <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className={`flex gap-6 md:gap-20 ${isReversed ? 'md:flex-row-reverse flex-col' : 'md:flex-row flex-col'}`}
+        >
+            <div className='shadow-lg rounded-3xl overflow-hidden md:min-w-96 md:max-w-96 min-w-60 max-w-60 md:mx-0 mx-auto max-h-60'>
+                <img src={image} alt={altText} style={{ height: '100%', width: '100%' }} />
+            </div>
+            <div className='text-center md:text-left'>
+                <h3 className="text-xl md:text-3xl font-semibold mb-4">{title}</h3>
+                <p className="text-lg md:text-2xl font-medium mb-4">{tags}</p>
+                <p className="text-base md:text-xl font-regular mb-6">{description}</p>
+                <Button onClick={() => navigate(`/projects/${url}`)}>View Project</Button>
+            </div>
+        </motion.div>
+    );
+};
