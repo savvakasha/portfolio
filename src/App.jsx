@@ -25,7 +25,7 @@ function App() {
     <Router>
       <ScrollToTop />
       <Navbar />
-      <div className="min-h-screen flex flex-col w-full max-w-6xl mx-auto px-4 sm:px-6">
+      <div className="min-h-screen flex items-end flex-col w-full">
         <main className="flex-grow justify-self-end md:w-[calc(100%-176px)] w-[calc(100%-56px)]">
         <Routes>
           <Route path="/" element={<Home />} />
