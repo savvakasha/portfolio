@@ -79,6 +79,7 @@ const Home = () => {
                         image={nimbus}
                         altText="Nimbus Logo"
                         isReversed={true}
+                        url="nimbus"
                     />
                     <IntroProjectItem
                         title="Streamlining Workflows for Telecom Field Technicians"
@@ -86,6 +87,7 @@ const Home = () => {
                         description="Leading UX research and design for digital infrastructure tools, mapping journeys, testing usability, and creating improved client and field tech experiences."
                         image={wave}
                         altText="Telecom Logo"
+                        url="wave"
                     />
                     <IntroProjectItem
                         title="Improving Usability for a Small Business"
@@ -94,6 +96,7 @@ const Home = () => {
                         image={bath}
                         altText="Bath Professional Logo"
                         isReversed={true}
+                        url="bath"
                     />
                     <div className='md:py-6'>
                         <p className="flex self-center items-center gap-2 text-2xl font-medium mb-4" style={{ color: '#3FA0A5' }}><FaArrowDown className="h-6 w-6" />Personal Projects<FaArrowDown className="h-6 w-6" /></p>

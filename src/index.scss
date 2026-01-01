@@ -248,14 +248,17 @@ button:focus-visible {
 
   &__subtitle {
     @apply text-4xl font-medium mb-6;
+    white-space: nowrap;
   }
 
   &__heading--small {
-    @apply text-3xl font-normal mb-8;
+    @apply font-normal mb-8;
+    font-size: 1.7rem;
   }
 
   &__heading--medium {
-    @apply text-2xl font-medium mb-4;
+    @apply font-medium mb-4;
+    font-size: 1.4rem;
   }
 
   &__text {

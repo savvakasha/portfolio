@@ -35,11 +35,79 @@ const Wave = () => {
                 <h2 className="project__subtitle">4th Wave Business Solutions UX Strategy & Approach:</h2>
                 <div>
                     <ProjectProcess steps={[
-                        "User Interviews",
-                        "Usability Testing",
-                        "User Journey Map",
-                        "Low- and high-fidelity prototypes",
-                        "Annotated design documentation"]} />
+                        "User Research",
+                        "Analyze Findings & Define User Needs",
+                        "Information Architecture",
+                        "Prototyping",
+                        "Evaluation & Iteration",
+                        "Handoff & Rollout"]} />
+                </div>
+            </div>
+            <ProjectDivider />
+            <div className='project__process-step'>
+                <h3 className="project__subtitle">{`1) User Research`}</h3>
+                <p className="project__text">I conducted interviews and usability tests with field technicians to understand how they used the existing tool during on-site work. These sessions revealed pain points such as unclear navigation, redundant data entry, and connectivity issues. Observing technicians in context also highlighted the importance of efficiency, visibility under bright light, and minimal interaction steps.</p>
+            </div>
+            <ProjectDivider />
+            <div className='project__process-step'>
+                <h3 className="project__subtitle">{`2) Analyze Findings & Define User Needs`}</h3>
+                <p className="project__text">I synthesized the research insights into key themes and mapped user journeys to visualize pain points across the workflow. From this, I defined core user needs: quick access to job information, reliable offline functionality, and clear task status visibility. These insights informed the redesign priorities and success metrics.</p>
+            </div>
+            <ProjectDivider />
+            <div className='project__process-step'>
+                <h3 className="project__subtitle">{`3) Information Architecture`}</h3>
+                <p className="project__text">To reduce cognitive load and improve task flow, I restructured the information architecture around technicians’ real-world tasks. Related actions were grouped logically, and redundant steps were removed. This resulted in a cleaner navigation structure and a clearer hierarchy for viewing and updating job data.</p>
+            </div>
+            <ProjectDivider />
+            <div className='project__process-step'>
+                <h3 className="project__subtitle">{`4) Prototyping`}</h3>
+                <p className="project__text">I developed low-fidelity wireframes to explore layout options and test navigation logic, followed by high-fidelity Figma prototypes for validation. The prototypes focused on streamlining critical tasks such as job updates, parts requests, and completion reporting while ensuring accessibility and touch-friendly interactions.</p>
+            </div>
+            <ProjectDivider />
+            <div className='project__process-step'>
+                <h3 className="project__subtitle">{`5) Evaluation & Iteration`}</h3>
+                <p className="project__text">Technicians participated in usability testing sessions with the prototypes. Their feedback led to iterative improvements, including simplified language, larger action buttons, and better visual cues for task completion. Each iteration brought the interface closer to technicians’ expectations and real usage scenarios.</p>
+            </div>
+            <ProjectDivider />
+            <div className='project__process-step'>
+                <h3 className="project__subtitle">{`6) Handoff & Rollout`}</h3>
+                <p className="project__text">Finalized designs and component specifications were handed off to the development team. I supported the rollout by reviewing builds for design consistency and functionality alignment, ensuring a smooth transition from prototype to production.</p>
+            </div>
+            <ProjectDivider />
+            <div>
+                <h2 className="project__subtitle">Results and Reflections</h2>
+                <div className='flex flex-row gap-20 mb-8'>
+                    <div className='flex-grow w-full gap-4'>
+                        <h4 className="project__heading--medium">Key Outcomes</h4>
+                        <ul className='list-disc list-inside project__text'>
+                            <li>Reduced average task completion time in testing by 35%</li>
+                            <li>Improved technician satisfaction scores in follow-up surveys</li>
+                            <li>Enhanced data accuracy due to clearer input validation and visual feedback</li>
+                            <li>Established a scalable design foundation for future product features</li>
+                        </ul>
+                    </div>
+
+                    <div className='flex-grow w-full gap-4'>
+                        <h4 className="project__heading--medium">What I learned</h4>
+                        <ul className='list-disc list-inside project__text'>
+                            This project deepened my understanding of designing for mobile contexts and offline use. It reinforced the importance of user research and validating assumptions through usability testing with real users.
+                        </ul>
+                    </div>
+                </div>
+                <div className='flex flex-row gap-20 mb-8'>
+                    <div className='flex-grow w-full gap-4'>
+                        <h4 className="project__heading--medium">Impact</h4>
+                        <ul className='list-disc list-inside project__text'>
+                            The redesigned tool improved efficiency in the field and strengthened trust between technicians and management by reducing friction in daily operations and making reporting more reliable.
+                        </ul>
+                    </div>
+
+                    <div className='flex-grow w-full gap-4'>
+                        <h4 className="project__heading--medium">What's Next</h4>
+                        <ul className='list-disc list-inside project__text'>
+                            Next time, I’d involve more cross-departmental stakeholders earlier, such as operations managers and customer service, to better connect technician workflows.
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
