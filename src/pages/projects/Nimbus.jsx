@@ -175,7 +175,7 @@ const Nimbus = () => {
             <ProjectDivider />
             <div>
                 <h3 className="project__subtitle mb-10">Results and Reflections</h3>
-                <div className='flex flex-row gap-20 mb-8'>
+                <div className='flex md:flex-row flex-col gap-8 md:gap-20 mb-8'>
                     <div className='flex-grow w-full gap-4'>
                         <h4 className="project__heading--medium">Key Outcomes</h4>
                         <p className="project__text">This project explored how users manage digital device usage and how AI can enhance digital self-control tools. Findings revealed that people are motivated to reduce screen time due to emotional, mental, and physical strain. The codesign workshop generated the Nimbus concept; an AI-driven tool that adapts to users’ habits, encourages real-life engagement, and promotes balanced technology use.</p>
@@ -187,7 +187,7 @@ const Nimbus = () => {
                         </ul>
                     </div>
                 </div>
-                <div className='flex flex-row gap-20 mb-8'>
+                <div className='flex md:flex-row flex-col gap-8 md:gap-20 mb-8'>
                     <div className='flex-grow w-full gap-4'>
                         <h4 className="project__heading--medium">Impact</h4>
                         <ul className='list-disc list-inside project__text'>

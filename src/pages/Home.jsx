@@ -76,9 +76,6 @@ const Home = () => {
                     <h2 className="text-xl md:text-3xl font-regular mb-4 md:mb-8">
                         As a UX Designer and user researcher, I leverage my background in psychology and customer service to understand people, creating systems that are intuitive, helpful, and efficient.
                     </h2>
-                    <div className="flex space-x-6 text-xs md:text-base mb-4 md:mb-8">
-                        <p><b>My toolbox:</b> Figma, Qualtrics, Unity, Optimal Workshop, MAXQDA</p>
-                    </div>
                 </motion.div>
                 <div className="flex justify-center items-center md:max-w-80 md:min-w-80 max-w-50 min-w-50 ">
                     <img src="avatar.png" alt="Profile" className="rounded-md shadow-lg md:w-3/4 w-2/4" />

@@ -22,7 +22,10 @@ const OutSmart = () => {
             }}
             className="container text-left"
         >
-            <ProjectImgContainer images={[outsmart01, outsmart02]} className="mt-28" />
+            <div className='flex gap-8 md:gap-16 mt-16 md:mt-28 justify-center'>
+                <img src={outsmart01} className='w-20 md:w-44' alt="OutSmart" />
+                <img src={outsmart02} className='w-20 md:w-44' alt="OutSmart" />
+            </div>
             <h1 className="project__title md:mt-28 mt-16">Designing OutSmart: A Competitive Skill-Based Gaming App</h1>
             <ProjectShortIntro
                 type="UX Design, UI Design, UX Research"
@@ -113,7 +116,7 @@ const OutSmart = () => {
             <ProjectDivider />
             <div>
                 <h3 className="project__subtitle mb-10">Results and Reflections</h3>
-                <div className='flex flex-row gap-20 mb-8'>
+                <div className='flex md:flex-row flex-col gap-8 md:gap-20 mb-8'>
                     <div className='flex-grow w-full gap-4'>
                         <h4 className="project__heading--medium">Key Outcomes</h4>
                         <ul className='list-disc list-inside project__text'>
@@ -129,7 +132,7 @@ const OutSmart = () => {
                         </ul>
                     </div>
                 </div>
-                <div className='flex flex-row gap-20 mb-8'>
+                <div className='flex md:flex-row flex-col gap-8 md:gap-20 mb-8'>
                     <div className='flex-grow w-full gap-4'>
                         <h4 className="project__heading--medium">Impact</h4>
                         <ul className='list-disc list-inside project__text'>

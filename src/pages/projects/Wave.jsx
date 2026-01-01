@@ -83,7 +83,7 @@ const Wave = () => {
             <ProjectDivider />
             <div>
                 <h2 className="project__subtitle">Results and Reflections</h2>
-                <div className='flex flex-row gap-20 mb-8'>
+                <div className='flex md:flex-row flex-col gap-8 md:gap-20 mb-8'>
                     <div className='flex-grow w-full gap-4'>
                         <h4 className="project__heading--medium">Key Outcomes</h4>
                         <ul className='list-disc list-inside project__text'>
@@ -101,7 +101,7 @@ const Wave = () => {
                         </ul>
                     </div>
                 </div>
-                <div className='flex flex-row gap-20 mb-8'>
+                <div className='flex md:flex-row flex-col gap-8 md:gap-20 mb-8'>
                     <div className='flex-grow w-full gap-4'>
                         <h4 className="project__heading--medium">Impact</h4>
                         <ul className='list-disc list-inside project__text'>

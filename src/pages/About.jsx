@@ -25,6 +25,9 @@ const About = () => {
                         <p className='text-lg md:text-xl'>
                             With a background in psychology, I focus on designing experiences that align with users’ needs and goals, making interactions efficient, and engaging.
                         </p>
+                        <div className="flex space-x-6 text-xs md:text-base mt-4 md:mt-8">
+                            <p><b>My toolbox:</b> Figma, Qualtrics, Unity, Optimal Workshop, MAXQDA</p>
+                        </div>
                     </div>
                     <div>
                         <h3 className='text-2xl md:text-4xl font-medium mb-4'>Outside of Work</h3>

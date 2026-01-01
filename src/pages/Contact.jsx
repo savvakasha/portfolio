@@ -91,7 +91,7 @@ const Contact = () => {
                             rel="noopener noreferrer"
                             className="text-gray-600 hover:text-black transition-colors"
                         >
-                            <FaLinkedin className="h-4 w-4" />
+                            <FaLinkedin className="h-8 w-8" />
                         </a>
                     </div>
 
