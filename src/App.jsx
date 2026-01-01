@@ -14,7 +14,7 @@ function App() {
     <Router>
       <Navbar />
       <div className="min-h-screen flex flex-col w-full max-w-6xl mx-auto px-4 sm:px-6">
-        <main className="flex-grow w-full">
+        <main className="flex-grow ml-auto w-full">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/work" element={<Work />} />
