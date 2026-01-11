@@ -35,13 +35,13 @@ const OutSmart = () => {
             />
             <ProjectDivider />
             <div className="flex md:flex-row flex-col gap-16">
-                <div>
+                <div className="w-full">
                     <p className="project__subtitle">Problem</p>
                     <p className="project__heading--medium">Balancing excitement with Trust </p>
                     <p className="project__text">Real-money gaming apps often struggle to balance excitement with usability and trust. </p>
                     <p className="project__text">Players face confusing navigation, inconsistent UI patterns, and limited transparency around gameplay and transactions, leading to poor retention and credibility issues.</p>
                 </div>
-                <div>
+                <div className="w-full">
                     <p className="project__subtitle">Solution</p>
                     <p className="project__heading--medium">Strategy Based on clarity and fairness.</p>
                     <p className="project__text">I led the creation of a cohesive design system, user experience strategy, and UI design centered on clarity, engagement, skill-building, and fairness. </p>
@@ -140,7 +140,7 @@ const OutSmart = () => {
                         </ul>
                     </div>
                     <div className='flex-grow w-full gap-4'>
-                        <h4 className="project__heading--medium">What's Next</h4>
+                        <h4 className="project__heading--medium">What I'd do Next</h4>
                         <ul className='list-disc list-inside project__text'>
                             <li>I’d conduct user interviews to validate assumptions around motivation, risk perception, and reward feedback loops before beginning the design process.</li>
                             <li>I’d involve developers earlier in the ideation phase to co-define technical constraints and opportunities, to ensure faster iteration and alignment between UX goals and product delivery.</li>

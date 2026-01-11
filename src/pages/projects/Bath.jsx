@@ -25,11 +25,11 @@ const Bath = () => {
             />
             <ProjectDivider />
             <div className="flex md:flex-row flex-col gap-16">
-                <div>
+                <div className="w-full">
                     <p className="project__subtitle">Problem</p>
                     <p className="project__text">The company’s website looked outdated, lacked clear navigation, and did not effectively communicate services or build trust with potential customers. This poor experience contributed to low engagement and limited client inquiries, making it difficult for the business to convert visitors into customers.</p>
                 </div>
-                <div>
+                <div className="w-full">
                     <p className="project__subtitle">Solution</p>
                     <p className='project__text'>Through heuristic evaluation and user research, I identified key usability and content issues that prevented users from exploring services or requesting quotes. I redesigned the website to create a more modern, trustworthy, and user-friendly experience by:</p>
                     <ul className='list-disc list-inside project__text'>
@@ -112,7 +112,7 @@ const Bath = () => {
                     </div>
 
                     <div className='flex-grow w-full gap-4'>
-                        <h4 className="project__heading--medium">What's Next</h4>
+                        <h4 className="project__heading--medium">What I'd do Next</h4>
                         <ul className='list-disc list-inside project__text'>
                             Next time, I’d collaborate more closely with marketing early on to align design decisions with SEO and conversion goals, ensuring the redesign delivers both a stronger user experience and measurable business results.
                         </ul>
