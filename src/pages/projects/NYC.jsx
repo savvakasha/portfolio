@@ -18,7 +18,7 @@ const NYC = () => {
             }}
             className="container text-left"
         >
-            <h1 className="project__title text-center md:mt-28 mt-16">New York City Tourism Website</h1>
+            <h1 className="project__title text-center md:mt-28 mt-16">NYC Tourism Website: Designing Clear Information Architecture</h1>
             <ProjectShortIntro
                 type="Information Architecture, UX Design, UX Research"
                 timeline="October – December 2023"
