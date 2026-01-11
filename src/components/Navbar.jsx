@@ -37,9 +37,9 @@ export default Navbar;
 
 const NavbarItem = ({ icon, text, href, isMobile = false }) => {
     return (
-        <div className="flex items-center gap-2">
+        <a href={href} className="flex items-center gap-2">
             {isMobile ? <img src={icon} alt={text} className="h-4 w-4" /> : <img src={icon} alt={text} className="h-6 w-6" />}
-            {isMobile ? <a href={href} className="text-lg text-gray-900 hover:text-gray-600 transition-colors">{text}</a> : <a href={href} className="text-2xl text-gray-900 hover:text-gray-600 transition-colors">{text}</a>}
-        </div>
+            {isMobile ? <span className="text-lg text-gray-900 hover:text-gray-600 transition-colors">{text}</span> : <span className="text-2xl text-gray-900 hover:text-gray-600 transition-colors">{text}</span>}
+        </a>
     );
 };

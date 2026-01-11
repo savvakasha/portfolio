@@ -21,11 +21,11 @@ const Wave = () => {
             />
             <ProjectDivider />
             <div className="flex md:flex-row flex-col gap-16">
-                <div>
+                <div className="w-full">
                     <p className="project__subtitle">Problem</p>
                     <p className="project__text">Technicians relied on an outdated tool to manage service tickets, update project statuses, and log field data. The interface was unintuitive, slow, and inconsistent across devices, causing reporting errors, delays, and frustration. The company needed a more efficient tool to improve accuracy and streamline communication between field teams and operations.</p>
                 </div>
-                <div>
+                <div className="w-full">
                     <p className="project__subtitle">Solution</p>
                     <p className="project__text">Through interviews and usability testing, I identified pain points in navigation, data entry, and task tracking. The redesigned tool introduced:</p>
                     <ul className='list-disc list-inside project__text'>
@@ -110,7 +110,7 @@ const Wave = () => {
                     </div>
 
                     <div className='flex-grow w-full gap-4'>
-                        <h4 className="project__heading--medium">What's Next</h4>
+                        <h4 className="project__heading--medium">What I'd do Next</h4>
                         <ul className='list-disc list-inside project__text'>
                             Next time, I’d involve more cross-departmental stakeholders earlier, such as operations managers and customer service, to better connect technician workflows.
                         </ul>

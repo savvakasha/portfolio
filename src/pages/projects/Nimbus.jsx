@@ -28,12 +28,12 @@ const Nimbus = () => {
             />
             <ProjectDivider />
             <div className="flex md:flex-row flex-col gap-16">
-                <div>
+                <div className="w-full">
                     <p className="project__subtitle">Problem</p>
                     <p className="project__text">Digital overuse has become a widespread challenge, yet most existing self-regulation tools feel rigid, impersonal, and often fail to create lasting change. Little is known about how these tools affect users over time, and even less about how Artificial Intelligence and co-design could be combined to make them more effective.</p>
                     <p className="project__text">I set out to create support that feels personalised, respectful, and proactive, helping users regain control of their digital habits without feeling restricted or monitored. This meant designing with users, not just for them, exploring how AI could enhance digital self-control in a more human-centred way.</p>
                 </div>
-                <div>
+                <div className="w-full">
                     <p className="project__subtitle">Solution</p>
                     <p className="project__text">To address these gaps, I explored how AI and co-design could enhance digital self-control tools. Through user interviews, a co-design workshop, and evaluation sessions, I developed Nimbus, an AI-enhanced digital self-control concept created with users that encourages mindful device use and real-life engagement, without sacrificing ethics nor user trust.</p>
                     <p className="project__text">This project demonstrates how a user-centred, collaborative design approach can inspire future innovation in AI-integrated digital well-being tools.</p>
@@ -195,7 +195,7 @@ const Nimbus = () => {
                         </ul>
                     </div>
                     <div className='flex-grow w-full gap-4'>
-                        <h4 className="project__heading--medium">What's Next</h4>
+                        <h4 className="project__heading--medium">What I'd do Next</h4>
                         <ul className='list-disc list-inside project__text'>
                             <li>Recruit a more diverse participant group.</li>
                             <li>Conduct multiple workshops.</li>
