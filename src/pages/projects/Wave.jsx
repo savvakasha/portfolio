@@ -34,7 +34,6 @@ const Wave = () => {
                         <li>Offline functionality for technicians working in low-connectivity areas</li>
                         <li>Large, glove-friendly buttons and high-contrast UI</li>
                     </ul>
-                    <p className="project__text">By grounding decisions in competitive analysis and iterative feedback, we built a platform that feels both entertaining and reliable, reducing friction in gameplay and payments.</p>
                 </div>
             </div>
             <ProjectDivider />
